@@ -1,0 +1,13 @@
+kind create cluster --name tp-grupo1				#Creamos un cluster con Kind.
+
+docker build -t tp-grupo1:v1 .					#Creamos la imagen.
+
+docker tag tp-grupo1:v1 ulisesaguirre/tp-grupo1:v1 		#Creamos una variante de la imagen, siguiendo el formato para Docker Hub
+
+docker push ulisesaguirre/tp-grupo1:v1				#Para pushear la imagen a Docker Hub
+
+kubectl create ns grupo1					#Creamos un namespace.
+
+kubectl -n grupo1 apply -f replicaset.yaml			#Creamos el replicaset
+
+kubectl -n grupo1 port-forward (nombre-del-pod) -f 8080:80	#Para conectarnos a uno de los pods.

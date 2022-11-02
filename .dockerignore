@@ -1,0 +1,5 @@
+deployment.yaml
+Dockerfile
+replicaset.yaml
+tp_grupo1.txt
+.gitignore
